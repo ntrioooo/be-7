@@ -3,7 +3,7 @@
  * @author Fikri Rahmat Nurhidayat
  */
 
-const { Sequelize } = require("../app/models");
+const { Sequelize } = require("sequelize");
 
 /** Destruct environment variable to get database configuration */
 const {
@@ -11,14 +11,13 @@ const {
   DB_PASSWORD = "1320",
   DB_HOST = "127.0.0.1",
   DB_NAME = "cars-rent",
-  DB_URI = "postgresql://postgres:2AVFdyrvldJ3wsRAtgmn@containers-us-west-95.railway.app:7609/railway"
+  DB_URI = "postgresql://postgres:2AVFdyrvldJ3wsRAtgmn@containers-us-west-95.railway.app:7609/railway",
+  db = new Sequelize(DB_URI, {
+    define: {
+      timestamps: false
+    }
+  })
 } = process.env;
-
-const db = new Sequelize(DB_URI, {
-  define: {
-    timestamps: false
-  }
-});
 
 module.exports = {
   development: {
