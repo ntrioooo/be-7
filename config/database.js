@@ -4,9 +4,6 @@
  */
 
 const Sequelize = require("sequelize");
-const dotenv = require('dotenv');
-
-dotenv.config();
 
 /** Destruct environment variable to get database configuration */
 const {
