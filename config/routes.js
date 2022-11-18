@@ -16,7 +16,11 @@ const apiRouter = express.Router();
  *       implementations
  */
  apiRouter.use(cors())
-apiRouter.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+apiRouter.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+apiRouter.use('/', (req, res) => {
+  res.send('Hallo!!!')
+})
 
 apiRouter.post("/api/v1/google", controllers.api.v1.handleGoogleLoginOrRegister);
 
