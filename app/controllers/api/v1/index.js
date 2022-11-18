@@ -5,8 +5,10 @@
 
 const carController = require("./carController");
 const authController = require("./authController");
+const handleGoogleLoginOrRegister = require('./handleGoogleLoginOrRegister')
 
 module.exports = {
   carController,
-  authController
+  authController,
+  handleGoogleLoginOrRegister
 };

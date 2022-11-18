@@ -3,7 +3,7 @@ const controllers = require("../app/controllers");
 const YAML = require('yamljs')
 const swaggerUi = require('swagger-ui-express');
 const cors = require('cors')
-const handleGoogleLoginOrRegister = require("../app/controllers/api/v1/handleGoogleLoginOrRegister");
+// const handleGoogleLoginOrRegister = require("../app/controllers/api/v1/handleGoogleLoginOrRegister");
 
 
 
@@ -18,7 +18,7 @@ const apiRouter = express.Router();
  apiRouter.use(cors())
 apiRouter.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
-apiRouter.post("/api/v1/google", handleGoogleLoginOrRegister);
+apiRouter.post("/api/v1/google", controllers.api.v1.handleGoogleLoginOrRegister);
 
 apiRouter.get("/api/v1/cars", controllers.api.v1.carController.list);
 apiRouter.post(
