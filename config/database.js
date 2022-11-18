@@ -9,7 +9,7 @@ const { Sequelize } = require("sequelize");
 const {
   DB_USERNAME = "postgres",
   DB_PASSWORD = "1320",
-  DB_HOST = "127.0.0.1",
+  DB_HOST = "railway",
   DB_NAME = "cars-rent",
   DB_URI = "postgresql://postgres:2AVFdyrvldJ3wsRAtgmn@containers-us-west-95.railway.app:7609/railway",
   db = new Sequelize(DB_URI, {
