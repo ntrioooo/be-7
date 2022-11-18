@@ -21,7 +21,7 @@ apiRouter.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 apiRouter.post("/api/v1/google", controllers.api.v1.handleGoogleLoginOrRegister);
 
 apiRouter.get("/api/v1/cars", controllers.api.v1.carController.list);
-apiRouter.post(
+apiRouter.post( 
   "/api/v1/cars", 
   controllers.api.v1.authController.authorize,
   controllers.api.v1.carController.verifyRoles("superAdmin", "admin"),

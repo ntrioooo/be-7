@@ -17,6 +17,7 @@ function createToken(user) {
 
   async function handleGoogleLoginOrRegister(req, res) {
     const { token } = req.body;
+    console.log(token)
   
     try {
       const ticket = await client.verifyIdToken({
@@ -26,7 +27,7 @@ function createToken(user) {
   
       const { email,name } = ticket.getPayload();
   
-      console.log(ticket.getPayload())
+      console.log('asd ',ticket.getPayload())
   
       let user = await User.findOne({ where: { email: email } });
       if (!user) user = await User.create({ email, name });
